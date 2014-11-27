@@ -1,3 +1,5 @@
+[![Circle CI](https://circleci.com/gh/stockholm-elixir/stockholm-elixir.png?style=badge)](https://circleci.com/gh/stockholm-elixir/stockholm-elixir)
+
 # Stockholm Elixir
 
 This is the official Stockholm Elixir homepage repo.
