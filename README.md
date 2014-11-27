@@ -18,7 +18,7 @@ Though there isn't much to see right now.
 
 ## Setting up heroku deploy
 
-This app is deployed at [http://stockholm-elixir.herokuapp.com/](http://stockholm-elixir.herokuapp.com/).
+This app is deployed at <http://stockholm-elixir.herokuapp.com/>.
 
     heroku apps:create stockholm-elixir --buildpack https://github.com/HashNuke/heroku-buildpack-elixir.git
     heroku config:set MIX_ENV=prod
@@ -34,6 +34,8 @@ This app is deployed at [http://stockholm-elixir.herokuapp.com/](http://stockhol
 * [Tomas Skogberg](https://github.com/tskogberg)
 
 ### License
+
+MIT license.
 
 >  Copyright © 2014 Stockholm Elixir
 >
