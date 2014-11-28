@@ -25,6 +25,13 @@ This app is deployed at <http://stockholm-elixir.herokuapp.com/>.
     heroku config:set SECRET_KEY_BASE=$(elixir -e "IO.puts :crypto.strong_rand_bytes(64) |> Base.encode64")
 
     git push heroku master
+    
+## Todo
+
+* Add automatic deploy to heroku so that people can contribute without having to have heroku access
+* Do cool stuff
+* Improve the design
+* Add content
 
 ## Credits and license
 
