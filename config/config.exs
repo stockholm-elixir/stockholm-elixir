@@ -6,11 +6,10 @@
 use Mix.Config
 
 # Configures the router
-config :phoenix, StockholmElixir.Router,
+config :stockholm_elixir, StockholmElixir.Endpoint,
   url: [host: "localhost"],
   http: [port: System.get_env("PORT")],
   secret_key_base: "oT6D9Q7cMfv3xEFhd/2R0op1TpsXWPGdjrm5BXcwYBomdzUSniMZsV3J0R5xYGMPnxhO8hEDesW7wHtAp01u5w==",
-  catch_errors: true,
   debug_errors: false,
   error_controller: StockholmElixir.PageController
 

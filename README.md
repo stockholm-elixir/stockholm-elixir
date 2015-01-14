@@ -7,7 +7,7 @@ This is the official Stockholm Elixir homepage repo.
 ## Development
 
     mix deps.get
-    mix phoenix.start
+    mix phoenix.server
 
 Though there isn't much to see right now.
 
@@ -25,7 +25,7 @@ This app is deployed at <http://stockholm-elixir.herokuapp.com/>.
     heroku config:set SECRET_KEY_BASE=$(elixir -e "IO.puts :crypto.strong_rand_bytes(64) |> Base.encode64")
 
     git push heroku master
-    
+
 ## Todo
 
 * Add automatic deploy to heroku so that people can contribute without having to have heroku access

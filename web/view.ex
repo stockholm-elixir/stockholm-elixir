@@ -6,7 +6,6 @@ defmodule StockholmElixir.View do
   using do
     quote do
       # Import common functionality
-      import StockholmElixir.I18n
       import StockholmElixir.Router.Helpers
 
       # Use Phoenix.HTML to import all HTML functions (forms, tags, etc)

@@ -11,7 +11,7 @@ use Mix.Config
 # Where those two env variables point to a file on
 # disk for the key and cert.
 
-config :phoenix, StockholmElixir.Router,
+config :stockholm_elixir, StockholmElixir.Endpoint,
   url: [host: "stockholm-elixir.herokuapp.com"],
   http: [port: System.get_env("PORT")],
   secret_key_base: System.get_env("SECRET_KEY_BASE")
