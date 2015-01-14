@@ -1,25 +1,27 @@
-defmodule StockholmElixir.RoomChannel do
+defmodule StockholmElixir.Channels.Chat do
   use Phoenix.Channel
 
   def join("rooms:lobby", message, socket) do
     reply socket, "joined", %{status: "connected"}
     {:ok, socket}
   end
+
   # 'subtopics' can be easily matched using binary pattern matching
   def join("rooms:" <> _private_topic, message, socket) do
     {:error, socket, :unauthorized}
   end
 
   def handle_in("new:msg", message, socket) do
-    broadcast socket, "new:msg", message
+    IO.puts @current_user
+    broadcast socket, "new:msg", Dict.put(message, :username, @current_user["name"])
     {:ok, socket}
   end
 
   # optional, hook into outgoing new:msg for all sockets for customized per-socket reply
-  def handle_out("new:msg", message, socket) do
-    reply socket, "new:msg", Dict.merge(message,
-      is_editable: User.can_edit_message?(socket.assigns[:user], message)
-    )
-    {:ok, socket}
-  end
+  # def handle_out("new:msg", message, socket) do
+  #   reply socket, "new:msg", Dict.merge(message,
+  #     is_editable: true # User.can_edit_message?(socket.assigns[:user], message)
+  #   )
+  #   {:ok, socket}
+  # end
 end

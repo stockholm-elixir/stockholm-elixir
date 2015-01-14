@@ -28,8 +28,9 @@ defmodule StockholmElixir.Router do
     get "/", AuthController, :index
     get "/callback", AuthController, :callback
   end
+
   socket "/ws", StockholmElixir do
-    channel "rooms:*", StockholmElixir.Channels.Chat
+    channel "rooms:*", Channels.Chat
   end
 
   # Fetch the current user from the session and add it to `conn.assigns`. This
