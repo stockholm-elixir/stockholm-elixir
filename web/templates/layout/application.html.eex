@@ -9,6 +9,7 @@
 
     <title>Stockholm Elixir</title>
     <link rel="stylesheet" href="/css/phoenix.css">
+    <script src="/js/chat.js">
   </head>
 
   <body>

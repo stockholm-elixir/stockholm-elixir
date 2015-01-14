@@ -5,3 +5,7 @@
   <li><a href="https://twitter.com/stockholmelixir">Twitter</a></li>
   <li><a href="https://github.com/stockholm-elixir">GitHub</a></li>
 </ul>
+
+<div id="messages"></div>
+@<input id="username" type="text">
+:<input id="message-input" type="text">
