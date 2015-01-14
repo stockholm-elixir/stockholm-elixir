@@ -12,6 +12,19 @@
   </head>
 
   <body>
+    <div id="authentication">
+      <%= if @current_user do %>
+        <h2>Welcome, <%= @current_user["name"] %>!</h2>
+        <img src="<%= @current_user["avatar_url"] %>" class="avatar"/>
+      <% else %>
+        <a class="btn btn-primary btn-lg"
+           href="<%= auth_path Endpoint, :index %>">
+          <i class="fa fa-github"></i>
+          Sign in with GitHub
+        </a>
+      <% end %>
+    </div>
+
     <div class="content">
       <%= @inner %>
     </div>
