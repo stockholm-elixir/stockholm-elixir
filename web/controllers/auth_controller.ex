@@ -4,7 +4,7 @@ defmodule StockholmElixir.AuthController do
   alias OAuth2.AccessToken
   alias OAuth2.Strategy.AuthCode
 
-  @params %{redirect_uri: "http://localhost:4000/auth/callback"}
+  @params %{redirect_uri: System.get_env("AUTHORIZATION_CALLBACK_URL")}
   @token_params Map.merge(%{headers: [{"Accept", "application/json"}]}, @params)
 
   plug :action
