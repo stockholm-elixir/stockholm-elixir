@@ -3,11 +3,14 @@ $(function () {
   var $messages = $("#messages");
   var $messageInput = $("#message-input");
   var $usernameInput = $("#username");
+  var $userTokenInput = $("#user-token");
 
-  socket.join("rooms:lobby", {}, function(chan){
-
+  socket.join("rooms:lobby", {
+    username: $usernameInput.val(),
+    user_token: $userTokenInput.val()
+  }, function (chan) {
     chan.on("user:entered", function(message){
-      $messages.append("<br/>[" + message.username + "] entered");
+      $messages.append("<br/>" + message.username + " entered");
     });
 
     chan.on("new:msg", function(msg){
@@ -18,7 +21,8 @@ $(function () {
       if(e.keyCode == 13){
         chan.send("new:msg", {
           content: $messageInput.val(),
-          username: $usernameInput.val()
+          username: $usernameInput.val(),
+          user_token: $userTokenInput.val()
         });
         $messageInput.val("");
       }

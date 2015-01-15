@@ -7,6 +7,7 @@ defmodule StockholmElixir.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :assign_current_user
+    plug :assign_user_token
   end
 
   pipeline :api do
@@ -38,6 +39,16 @@ defmodule StockholmElixir.Router do
   # `@current_user`.
   defp assign_current_user(conn, _) do
     assign(conn, :current_user, get_session(conn, :current_user))
+  end
+
+  defp assign_user_token(conn, _) do
+    username = get_session(conn, :current_user)["login"]
+    assign(conn, :user_token, make_token(username))
+  end
+
+  defp make_token(username) do
+    signing_key = System.get_env("SIGNING_KEY")
+    :erlang.list_to_binary(Enum.map(:erlang.bitstring_to_list(:crypto.md5("#{username}:#{signing_key}")), fn(x) -> :erlang.integer_to_binary(x, 16) end))
   end
 
   # Fetch the configured strategy from the router's config and store the

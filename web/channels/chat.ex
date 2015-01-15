@@ -2,26 +2,31 @@ defmodule StockholmElixir.Channels.Chat do
   use Phoenix.Channel
 
   def join("rooms:lobby", message, socket) do
-    reply socket, "joined", %{status: "connected"}
-    {:ok, socket}
-  end
-
-  # 'subtopics' can be easily matched using binary pattern matching
-  def join("rooms:" <> _private_topic, message, socket) do
-    {:error, socket, :unauthorized}
+    if verify_user_token(message) do
+      reply socket, "joined", %{status: "connected"}
+      broadcast socket, "user:entered", %{username: message["username"]}
+      {:ok, socket}
+    else
+      reply socket, "new:msg", %{username: "This website", content: "unauthorized"}
+      {:error, socket, :unauthorized}
+    end
   end
 
   def handle_in("new:msg", message, socket) do
-    IO.puts @current_user
-    broadcast socket, "new:msg", Dict.put(message, :username, @current_user["name"])
-    {:ok, socket}
+    if verify_user_token(message) do
+      broadcast socket, "new:msg", message
+      {:ok, socket}
+    else
+      reply socket, "new:msg", %{username: "This website", content: "unauthorized"}
+      {:error, socket, :unauthorized}
+    end
   end
 
-  # optional, hook into outgoing new:msg for all sockets for customized per-socket reply
-  # def handle_out("new:msg", message, socket) do
-  #   reply socket, "new:msg", Dict.merge(message,
-  #     is_editable: true # User.can_edit_message?(socket.assigns[:user], message)
-  #   )
-  #   {:ok, socket}
-  # end
+  defp verify_user_token(message) do
+    username = message["username"]
+    user_token = message["user_token"]
+    signing_key = System.get_env("SIGNING_KEY")
+    expected_digest = :erlang.list_to_binary(Enum.map(:erlang.bitstring_to_list(:crypto.md5("#{username}:#{signing_key}")), fn(x) -> :erlang.integer_to_binary(x, 16) end))
+    user_token == expected_digest
+  end
 end
