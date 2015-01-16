@@ -13,7 +13,6 @@ defmodule StockholmElixir.View do
 
       # Common aliases
       alias Phoenix.Controller.Flash
-      alias StockholmElixir.User
     end
   end
 
