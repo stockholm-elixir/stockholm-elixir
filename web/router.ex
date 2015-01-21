@@ -48,7 +48,7 @@ defmodule StockholmElixir.Router do
 
   defp make_token(username) do
     signing_key = System.get_env("SIGNING_KEY")
-    :erlang.list_to_binary(Enum.map(:erlang.bitstring_to_list(:crypto.md5("#{username}:#{signing_key}")), fn(x) -> :erlang.integer_to_binary(x, 16) end))
+    StockholmElixir.Crypto.md5("#{username}:#{signing_key}")
   end
 
   # Fetch the configured strategy from the router's config and store the

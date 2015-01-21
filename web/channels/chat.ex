@@ -26,7 +26,7 @@ defmodule StockholmElixir.Channels.Chat do
     username = message["username"]
     user_token = message["user_token"]
     signing_key = System.get_env("SIGNING_KEY")
-    expected_digest = :erlang.list_to_binary(Enum.map(:erlang.bitstring_to_list(:crypto.md5("#{username}:#{signing_key}")), fn(x) -> :erlang.integer_to_binary(x, 16) end))
+    expected_digest = StockholmElixir.Crypto.md5("#{username}:#{signing_key}")
     user_token == expected_digest
   end
 end
