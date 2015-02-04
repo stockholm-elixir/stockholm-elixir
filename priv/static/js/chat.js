@@ -4,12 +4,20 @@ $(function () {
   var $messageInput = $("#message-input");
   var $usernameInput = $("#username");
   var $userTokenInput = $("#user-token");
+  var users = [];
 
   socket.join("rooms:lobby", {
     username: $usernameInput.val(),
     user_token: $userTokenInput.val()
   }, function (chan) {
+    chan.on("joined", function(message) {
+      users = message.users;
+      $("#users").html(users.join(" "));
+    });
+
     chan.on("user:entered", function(message){
+      users.push(message.username);
+      $("#users").html(users.join(" "));
       $messages.append("<br/>" + message.username + " entered");
     });
 

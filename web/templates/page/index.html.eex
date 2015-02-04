@@ -11,4 +11,7 @@
   <input id="username" type="hidden" value="<%= @current_user["login"] %>">
   <input id="message-input" type="text">
   <input id="user-token" type="hidden" value="<%= @user_token %>">
+
+  <div id="users">
+  </div>
 <% end %>

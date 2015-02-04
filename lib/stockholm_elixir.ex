@@ -8,10 +8,11 @@ defmodule StockholmElixir do
 
     children = [
       # Start the endpoint when the application starts
-      worker(StockholmElixir.Endpoint, [])
+      worker(StockholmElixir.Endpoint, []),
 
       # Here you could define other workers and supervisors as children
       # worker(MyPhoenixApp.Worker, [arg1, arg2, arg3]),
+      worker(StockholmElixir.UserStore, [[]])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
