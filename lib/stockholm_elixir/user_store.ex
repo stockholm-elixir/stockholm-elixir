@@ -5,11 +5,11 @@ defmodule StockholmElixir.UserStore do
     GenServer.start_link(__MODULE__, state, [name: :user_store])
   end
 
-  def handle_call(:get, _from, list) do
-    {:reply, list, list}
+  def handle_call(:all, _from, set) do
+    {:reply, set, set}
   end
 
-  def handle_cast({:push, h}, t) do
-    {:noreply, [h|t]}
+  def handle_cast({:put, element}, set) do
+    {:noreply, Enum.into(element, set)}
   end
 end

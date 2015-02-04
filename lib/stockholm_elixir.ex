@@ -12,7 +12,7 @@ defmodule StockholmElixir do
 
       # Here you could define other workers and supervisors as children
       # worker(MyPhoenixApp.Worker, [arg1, arg2, arg3]),
-      worker(StockholmElixir.UserStore, [[]])
+      worker(StockholmElixir.UserStore, [HashSet.new])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

@@ -7,11 +7,10 @@
 </ul>
 
 <%= if @current_user do %>
+  Users: <span id="users"></span>
+
   <div id="messages"></div>
   <input id="username" type="hidden" value="<%= @current_user["login"] %>">
-  <input id="message-input" type="text">
+  <%= @current_user["login"] %>: <input id="message-input" type="text">
   <input id="user-token" type="hidden" value="<%= @user_token %>">
-
-  <div id="users">
-  </div>
 <% end %>

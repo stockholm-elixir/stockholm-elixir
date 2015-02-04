@@ -3,9 +3,12 @@ defmodule StockholmElixir.Channels.Chat do
 
   def join("rooms:lobby", message, socket) do
     if verify_user_token(message) do
-      GenServer.cast(:user_store, {:push, message["username"]})
-      reply socket, "joined", %{status: "connected", users: GenServer.call(:user_store, :get)}
-      broadcast socket, "user:entered", %{username: message["username"]}
+      username = message["username"]
+      users = GenServer.call(:user_store, :all)
+      users = Enum.into([username], users)
+      GenServer.cast(:user_store, {:put, username})
+      reply socket, "joined", %{status: "connected", users: users}
+      broadcast socket, "user:entered", %{username: username}
       {:ok, socket}
     else
       reply socket, "new:msg", %{username: "This website", content: "unauthorized"}
