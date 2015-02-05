@@ -19,7 +19,7 @@
       <%= if @current_user do %>
         <h2>Welcome, <%= @current_user["name"] %>!</h2>
         <img src="<%= @current_user["avatar_url"] %>" class="avatar"/>
-      <% else %>
+      <% else if System.get_env("CLIENT_ID")  %>
         <a class="btn btn-primary btn-lg"
            href="<%= auth_path Endpoint, :index %>">
           <i class="fa fa-github"></i>
