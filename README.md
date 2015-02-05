@@ -44,7 +44,12 @@ value.
 ### Contributors
 
 * [Joakim Kolsjö](https://github.com/joakimk)
+* [Karl Eklund](https://github.com/kek)
+* [Kristoffer Roupé](https://github.com/kitofr)
+* [Martin Svalin](https://github.com/martinsvalin)
+* [Mikael Amborn](https://github.com/MikaelAmborn)
 * [Tomas Skogberg](https://github.com/tskogberg)
+* [Victoria](https://github.com/littlekid)
 
 ### License
 
