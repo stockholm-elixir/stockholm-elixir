@@ -7,7 +7,7 @@ This is the official Stockholm Elixir homepage repo.
 ## Development
 
     mix deps.get
-    mix phoenix.start
+    mix phoenix.server
 
 Though there isn't much to see right now.
 
@@ -25,10 +25,16 @@ This app is deployed at <http://stockholm-elixir.herokuapp.com/>.
     heroku config:set SECRET_KEY_BASE=$(elixir -e "IO.puts :crypto.strong_rand_bytes(64) |> Base.encode64")
 
     git push heroku master
-    
+
+To enable the chat, `CLIENT_ID`, `CLIENT_SECRET` and
+`AUTHORIZATION_CALLBACK_URL` must also be set to the values of a
+GitHub OAuth application, and SIGNING_KEY must be set to some secret
+value.
+
 ## Todo
 
-* Add automatic deploy to heroku so that people can contribute without having to have heroku access
+* Add automatic deploy to heroku so that people can contribute without
+  having to have heroku access
 * Do cool stuff
 * Improve the design
 * Add content

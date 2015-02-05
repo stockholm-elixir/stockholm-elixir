@@ -1,8 +1,11 @@
+body {
+  font-family: Impact, Charcoal, sans-serif;
+}
+
 .content {
   margin: auto;
   text-align: center;
   width: 940px;
-  font-family: Impact, Charcoal, sans-serif;
 }
 
 h1 {
@@ -17,4 +20,18 @@ h1 {
   display: inline;
   margin-right: 5px;
   font-size: 18px;
+}
+
+#authentication {
+  float: right;
+  text-align: right;
+}
+
+#authentication h2 {
+  font-size: 16px;
+}
+
+#authentication img.avatar {
+  width: 100px;
+  height: 100px;
 }
