@@ -1,6 +1,7 @@
 body {
   font-family: Cabin, sans-serif;
   font-size: 22px;
+  margin: 0;
   padding: 30px;
   text-align: center;
 }
@@ -18,7 +19,7 @@ a:hover {
 
 .content {
   margin: 0 auto;
-  width: 940px;
+  max-width: 940px;
 }
 
 .logo {
@@ -42,4 +43,14 @@ a:hover {
 .links li {
   display: inline;
   margin: 0 10px;
+}
+
+@media (max-width: 500px) {
+  .header {
+    font-size: 30px;
+  }
+
+  body {
+    padding: 20px 15px;
+  }
 }
