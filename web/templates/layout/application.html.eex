@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>Stockholm Elixir</title>
+    <link href="//fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/phoenix.css">
     <script src="/js/jquery-1.11.2.min.js"></script>
     <script src="/js/phoenix.js"></script>
