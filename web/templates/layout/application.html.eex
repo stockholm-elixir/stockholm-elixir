@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>Stockholm Elixir</title>
+    <link href="//fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/phoenix.css">
     <script src="/js/jquery-1.11.2.min.js"></script>
     <script src="/js/phoenix.js"></script>
@@ -15,19 +16,6 @@
   </head>
 
   <body>
-    <div id="authentication">
-      <%= if @current_user do %>
-        <h2>Welcome, <%= @current_user["name"] %>!</h2>
-        <img src="<%= @current_user["avatar_url"] %>" class="avatar"/>
-      <% else %>
-        <a class="btn btn-primary btn-lg"
-           href="<%= auth_path Endpoint, :index %>">
-          <i class="fa fa-github"></i>
-          Sign in with GitHub
-        </a>
-      <% end %>
-    </div>
-
     <div class="content">
       <%= @inner %>
     </div>
