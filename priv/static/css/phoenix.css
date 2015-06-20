@@ -21,15 +21,22 @@ a:hover {
   width: 940px;
 }
 
+.logo {
+  max-width: 200px;
+}
+
 .header {
   font-size: 40px;
   margin: 0;
 }
 
+.desc {
+  margin: 50px 0;
+}
+
 .links {
   list-style-type: none;
   padding: 0;
-  margin-top: 40px;
 }
 
 .links li {

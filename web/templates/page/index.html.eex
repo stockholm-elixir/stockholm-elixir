@@ -1,6 +1,8 @@
+<p><img src="/images/stockholm_elixir.png" alt="" class="logo" /></p>
+
 <h1 class="header">Stockholm Elixir</h1>
 
-<p>Enthusiasts of the Elixir programming language in Stockholm, Sweden.</p>
+<p class="desc">Enthusiasts of the Elixir programming language in Stockholm, Sweden.</p>
 
 <ul class="links">
   <li><a href="http://www.meetup.com/stockholm-elixir">Meetup</a></li>
