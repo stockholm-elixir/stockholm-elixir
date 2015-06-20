@@ -43,11 +43,17 @@ a:hover {
 .links li {
   display: inline;
   margin: 0 10px;
+  white-space: nowrap;
 }
 
 @media (max-width: 500px) {
   .header {
     font-size: 30px;
+  }
+
+  .links li {
+    display: block;
+    margin: 15px 0;
   }
 
   body {
