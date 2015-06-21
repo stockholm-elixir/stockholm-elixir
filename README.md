@@ -43,13 +43,15 @@ value.
 
 ### Contributors
 
+* [Henrik Nyh](https://github.com/henrik)
 * [Joakim Kolsjö](https://github.com/joakimk)
 * [Karl Eklund](https://github.com/kek)
 * [Kristoffer Roupé](https://github.com/kitofr)
+* [Lennart Fridén](https://github.com/DevL)
 * [Martin Svalin](https://github.com/martinsvalin)
 * [Mikael Amborn](https://github.com/MikaelAmborn)
 * [Tomas Skogberg](https://github.com/tskogberg)
-* [Victoria](https://github.com/littlekid)
+* [Victoria Wagman](https://github.com/littlekid)
 
 ### License
 
