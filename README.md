@@ -21,15 +21,15 @@ This is the official Stockholm Elixir homepage repo.
 
 This app is deployed to <http://stockholm-elixir.herokuapp.com/>.
 
-One-time setup:
+Deploy:
+
+    git push heroku master
+
+One-time setup (already done):
 
     heroku apps:create stockholm-elixir --buildpack https://github.com/HashNuke/heroku-buildpack-elixir.git
     heroku config:set MIX_ENV=prod
     heroku config:set SECRET_KEY_BASE=$(elixir -e "IO.puts :crypto.strong_rand_bytes(64) |> Base.encode64")
-
-Deploy:
-
-    git push heroku master
 
 
 ## Contributors
