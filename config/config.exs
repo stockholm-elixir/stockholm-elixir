@@ -10,13 +10,7 @@ config :stockholm_elixir, StockholmElixir.Endpoint,
   url: [host: "localhost"],
   http: [port: System.get_env("PORT")],
   secret_key_base: "oT6D9Q7cMfv3xEFhd/2R0op1TpsXWPGdjrm5BXcwYBomdzUSniMZsV3J0R5xYGMPnxhO8hEDesW7wHtAp01u5w==",
-  debug_errors: false,
-  oauth2: {OAuth2.Strategy.AuthCode, [
-    client_id: System.get_env("CLIENT_ID"),
-    client_secret: System.get_env("CLIENT_SECRET"),
-    site: "https://api.github.com",
-    authorize_url: "https://github.com/login/oauth/authorize",
-    token_url: "https://github.com/login/oauth/access_token"]}
+  debug_errors: false
 
 # Configures Elixir's Logger
 config :logger, :console,
