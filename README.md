@@ -4,44 +4,35 @@
 
 This is the official Stockholm Elixir homepage repo.
 
+
 ## Development
 
     mix deps.get
     mix phoenix.server
 
-Though there isn't much to see right now.
 
 ## Test
 
     mix deps.get
     mix test
 
-## Setting up heroku deploy
 
-This app is deployed at <http://stockholm-elixir.herokuapp.com/>.
+## Production
+
+This app is deployed to <http://stockholm-elixir.herokuapp.com/>.
+
+One-time setup:
 
     heroku apps:create stockholm-elixir --buildpack https://github.com/HashNuke/heroku-buildpack-elixir.git
     heroku config:set MIX_ENV=prod
     heroku config:set SECRET_KEY_BASE=$(elixir -e "IO.puts :crypto.strong_rand_bytes(64) |> Base.encode64")
 
+Deploy:
+
     git push heroku master
 
-To enable the chat, `CLIENT_ID`, `CLIENT_SECRET` and
-`AUTHORIZATION_CALLBACK_URL` must also be set to the values of a
-GitHub OAuth application, and SIGNING_KEY must be set to some secret
-value.
 
-## Todo
-
-* Add automatic deploy to heroku so that people can contribute without
-  having to have heroku access
-* Do cool stuff
-* Improve the design
-* Add content
-
-## Credits and license
-
-### Contributors
+## Contributors
 
 * [Henrik Nyh](https://github.com/henrik)
 * [Joakim Kolsjö](https://github.com/joakimk)
@@ -53,7 +44,8 @@ value.
 * [Tomas Skogberg](https://github.com/tskogberg)
 * [Victoria Wagman](https://github.com/littlekid)
 
-### License
+
+## License
 
 MIT license.
 
