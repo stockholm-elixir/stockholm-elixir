@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 30px;
   text-align: center;
+  color: #111;
 }
 
 a, a:visited {
@@ -32,18 +33,25 @@ a:hover {
 }
 
 .desc {
-  margin: 50px 0;
+  margin: 25px 0 50px;
 }
 
 .links {
   list-style-type: none;
   padding: 0;
+  font-size: 26px;
 }
 
 .links li {
   display: inline;
-  margin: 0 10px;
+  margin: 0 15px;
   white-space: nowrap;
+}
+
+footer {
+  opacity: 0.7;
+  margin-top: 50px;
+  font-size: 16px;
 }
 
 @media (max-width: 500px) {

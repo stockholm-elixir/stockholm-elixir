@@ -7,6 +7,9 @@
 <ul class="links">
   <li><a href="http://www.meetup.com/stockholm-elixir">Meetup</a></li>
   <li><a href="https://twitter.com/stockholmelixir">Twitter</a></li>
-  <li><a href="https://github.com/stockholm-elixir">GitHub</a></li>
-  <li><a href="https://stockholm-elixir-slack.herokuapp.com/">Join our chat</a></li>
+  <li><a href="https://stockholm-elixir-slack.herokuapp.com/">Chat</a></li>
 </ul>
+
+<footer>
+  <p>Contribute to this site <a href="https://github.com/stockholm-elixir/stockholm-elixir">on GitHub</a>.</p>
+</footer>
