@@ -19,7 +19,7 @@ This is the official Stockholm Elixir homepage repo.
 
 ## Production
 
-This app is deployed to <http://stockholm-elixir.herokuapp.com/>.
+This app is deployed to <http://stockholm.elixir.pm/> (<http://stockholm-elixir.herokuapp.com/>). Contact [Henrik](http://henrik.nyh.se) about DNS.
 
 Deploy:
 
