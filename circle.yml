@@ -10,9 +10,3 @@ dependencies:
 test:
   override:
     - script/ci/tests.sh
-
-deployment:
-  staging:
-    branch: master
-    heroku:
-      appname: stockholm-elixir
